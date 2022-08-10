@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Bootstrap Example final</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js" type="text/javascript"
+        language="javascript"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link href="CSS/bootstrap/bootstrap.min.css" type="text/css" rel="stylesheet" />
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.1/animate.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript">
+        new WOW().init();
+    </script>
+    <style type="text/css">
+        @import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@1,200&display=s wap');
+        @import url('https://fonts.googleapis.com/css2?family=Baloo+Da+2&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Zen+Loop&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+
+        * {
+
+            font-size: 15px;
+            font-weight: bold;
+            color: rgb(0, 0, 0)
+        }
+
+        #NavRow nav{
+            font-family: 'Work Sans', sans-serif;
+         background-color: rgb(138, 168, 208);
+        }
+
+        .videoback {
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-size: cover;
+            z-index: -1;
+            opacity: 0.6;
+        }
+
+        .csss {
+            position: static;
+            height: auto;
+            width: auto;
+            min-width: 100%;
+            min-height: 100%;
+            background: rgba(150, 3, 241);
+            opacity: 0.7;
+        }
+
+        #overlay {
+            position: relative;
+            width: 400px;
+        }
+
+        .images {
+            width: 250px;
+            height: 250px;
+            border-radius: 20%;
+            display: block;
+            transition: 4s;
+            opacity: 1;
+        }
+
+        .wrap {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 100%;
+            opacity: 0;
+            transition: 1s;
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+
+        .images:hover {
+            transform: rotate3d(1, 1, 1, 360deg);
+            opacity: 0.5;
+        }
+
+        .img1 {
+            color: black;
+            font-size: 20px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -webkit-transform: translate(-80%, -80%);
+            -ms-transform: translate(-80%, -80%);
+            -o-transform: translate(-80%, -80%);
+            -moz-transform: translate(-80%, -80%);
+            transform: translate(-80%, -80%);
+            text-align: center;
+        }
+
+        #CNAForm {
+            margin-top: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0px 0px 3px rgb(243, 6, 6);
+            font-family: 'Zen Loop', cursive;
+        }
+
+        #aboutusdiv {
+            font-family: 'Baloo Da 2', cursive;
+            margin-top: 20px;
+            background-color: lightblue;
+            background: rgba(159, 159, 217, 0.5);
+        }
+
+        i.fa,
+        b {
+            color: rgb(21, 4, 252);
+        }
+
+        h1 {
+            text-align: center;
+            color: blue
+        }
+
+        #headimg {
+            margin-top: 70px;
+        }
+
+        #btn {
+            margin-top: 90px;
+            margin-bottom: 90px;
+            left: 10px;
+            right: 10px;
+
+        }
+
+        /* .nav {
+            background-color: rgb(178, 173, 228);
+        } */
+
+        #q1 {
+            margin-bottom: 50px;
+        }
+
+        #q2 {
+            margin-bottom: 50px;
+        }
+
+        #q3 {
+            margin-bottom: 50px;
+        }
+
+        #corse {
+            margin-top: 70px;
+            background-color: rgba(178, 173, 228, 0.6);
+            font-family: 'Baloo Da 2', cursive;
+        }
+
+
+        #imagediv {
+            background-color: rgba(178, 173, 228, 0.6);
+            height: auto;
+            width: auto;
+            min-width: 100%;
+            min-height: 100%;
+            padding-top: 80px;
+        }
+
+        #formdiv {
+            height: 100%;
+            background-color: rgba(178, 173, 228, 0.6);
+            padding-top: 50px;
+            padding-bottom: 50px;
+        }
+
+        #slidediv {
+            background-color: rgba(178, 173, 228, 0.6);
+            height: auto;
+            width: auto;
+            min-width: 50%;
+            min-height: 50%;
+            font-family: 'Permanent Marker', cursive;
+        }
+
+        .main-section {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(178, 173, 228, 0.7);
+
+        }
+
+        img {
+            max-width: 400px;
+
+
+        }
+
+        .R4 {
+            height: 600px;
+            width: 100%;
+        }
+
+        #R4 {
+            margin-top: 150px;
+            margin-bottom: 150px;
+        }
+
+        .R4C1 {
+            width: 28%;
+            margin-right: 2%;
+        }
+
+        .R4C2 {
+            width: 70%;
+        }
+
+        #HeaderDiv a.navbar-brand {
+            font-family: Monotype Corsiva;
+            font-size: 25px;
+            color: #ffffff;
+        }
+
+        #navbarCollapse li b {
+            color: #ffffff;
+        }
+
+
+        @media(max-width:768px) {
+            .HOME {
+                left: -160%;
+                width: 260%;
+            }
+
+        }
+
+        @media(max-width:992px) {
+            #Home {
+                padding-top: 17%;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main-section" id="HOME">
+        <img src="logo.png" alt=" srcset" data-wow-duration="5s" class="wow rubberBand" data-wow-iteration="15">
+    </div>
+
+
+  
+    <div class="container-fluid">
+        <div class="row" id="NavRow">
+            <nav class="navbar-fixed-top">
+                <div class="col-xs-8 col-sm-8 col-md-7 col-lg-7">
+                    <ul class="nav nav-tabs ">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#aboutusdiv"><i class="fa fa-at"
+                                    aria-hidden="true"></i>&nbsp;ABOUT US</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#HOME"><i class="fa fa-home" aria-hidden="true"></i>&nbsp;HOME</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#R4"><i class="fa fa-user-circle"
+                                    aria-hidden="true"></i>&nbsp;CONTACT US</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#corse"><i class="fa fa-graduation-cap"
+                                    aria-hidden="true"></i>&nbsp;COURSE</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#1"><i class="fa fa-calendar"
+                                    aria-hidden="true"></i>&nbsp;EVENTS</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#CNAForm"><i class="fa fa-wpforms" aria-hidden="true"></i>&nbsp;
+                                FORM</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="https://silveroakuni.ac.in/"><i class="fa fa-university"
+                                    aria-hidden="true"></i>&nbsp;UNIVERSITY</a>
+                        </li>
+                    </ul>
+                     </div>
+                    <div id="navbarCollapse" class=" col-xs-4 col-sm-4 col-md-5 col-lg-5">
+                    <ul class="nav navbar-right" style="font-size:20px;"> 
+                            
+                        <li class="nav-item">
+                            <a href="https://goo.gl/maps/j88nCBYQ82VrGxPs9"><i class="fa fa-location-arrow"
+                                    aria-hidden="false"></i></a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="https://youtube.com/c/SilverOakUni"><i class="fa fa-youtube-square"
+                                    aria-hidden="false"></i></a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="https://instagram.com/silveroakuni?igshid=YmMyMTA2M2Y="><i class="fa fa-instagram"
+                                    aria-hidden="false"></i></a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="https://www.facebook.com/SilverOakUni/"><i class="fa fa-facebook-official"
+                                    aria-hidden="false"></i></a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="https://github.com/YASHKOLADIYA/YASHKOLADIYA"><i class="fa fa-github-square"
+                                    aria-hidden="false"></i></a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            
+            </nav>
+        </div>
+    </div>
+    <!-- <div class="container">
+            <div class="row">
+                <div class="col-xs-12 offset-sm-2 col-sm-8 offset-md-5 col-md-6 offset-lg-4 col-lg-6 " id="headimg">
+                    <img src="250x70.png" alt="image1" class="wow jello" data-wow-duration="5s">
+                </div>
+            </div>
+        </div> -->
+
+    <div class="videoback">
+        <video autoplay loop class="csss">
+            <source src="vi.mp4" type="video/mp4">
+            Your browser does not support HTML5 video.
+        </video>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-8 offset-md-3 col-md-6 offset-lg-3 col-lg-6 wow bounceIn"
+                data-wow-duration="4s" id="aboutusdiv">
+                <hr>
+                <h1>SILVER OAK UNIVERSITY</h1>
+                <hr>
+                <p>The Silver Oak University is a premier university of the country with a venerable legacy from
+                    Silver Oak
+                    Group of
+                    Institutes with acclaim for highest academic standards, diverse educational programmes,
+                    distinguished
+                    faculty,
+                    illustrious alumni, varied cocurricular activities and modern infrastructure.
+                    Over eleven years of its existence as Silver Oak Group of Institutes, the group has sustained
+                    the highest
+                    global
+                    standards and best practices in education. Its long-term commitment to nation building and
+                    unflinching adherence
+                    to universal human values are reflected in its motto: “Gyanam Param Bhushanam” and “Education to
+                    Innovation”.
+                    Established in 2009 as an affiliated college today State government has accorded it with the
+                    status of a
+                    State
+                    Private University (under Gujarat Private Universities Act, 2009). A strong commitment to
+                    excellence in
+                    teaching,
+                    research and social outreach has made the University a role-model and trend setter for other
+                    Institutes and
+                    Universities. Beginning with 240 students, it has grown as one of the largest engineering
+                    campuses with more
+                    than
+                    7000 students just in span of a little more than a decade.
+                </p>
+                <hr>
+            </div>
+        </div>
+    </div>
+    <div class=" container-fluid" id="btn">
+        <div class=" col-xs-12 offset-sm-4 col-sm-6 offset-md-5 col-md-6 offset-lg-4 col-lg-6" data-wow-duration=" 5s">
+            <button type="button" class="btn btn-primary btn-center" data-toggle="modal" data-target="#exampleModal">
+                Invitation
+            </button>
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Invitation Form</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <form class="form-inline">
+                                <center>
+                                    <div class="form-group">
+                                        <label for="exampleInputName2">Name</label>
+                                        <input type="text" class="form-control" id="exampleInputName2"
+                                            placeholder="enter your name">
+                                    </div><br><br>
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail2">Email</label>
+                                        <input type="email" class="form-control" id="exampleInputEmail2"
+                                            placeholder="enter your mail id">
+                                    </div>
+                                </center>
+                                <br>
+                                <!-- <center><button type="submit" class="btn btn-default btn-primary"></button></center> -->
+                            </form>
+                        </div>
+                        <center>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondar" data-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary">Send invitation</button>
+                            </div>
+                        </center>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid" data-wow-duration="5s" id="corse">
+        <div class="row" id="CourseRow" style="margin-left: 50px;margin-right:50px;">
+            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 wow slideInLeft" data-wow-duration="4s">
+                <hr>
+                <h2> B.C.A</h2>
+                <hr>
+                <p>BCA (Bachelor of Computer Application) is 3 years (6 semesters) full time program run by Silver
+                    Oak
+                    University. It is a professional undergraduate program which focuses mainly on computer
+                    application
+                    concepts.
+                    The Course is designed to guide the student from basic concepts to train them up to the recent
+                    advance
+                    technological practices in the industries. Imparting the latest required technical skill set
+                    through
+                    hands-on
+                    in the Hi-tech IT laboratories experiences is emphasized at every stage of the program and
+                    brings
+
+
+                    0 awareness to
+                    the future prospects in the modern IT world.</p>
+                <p>Eligibility Criteria
+                    <br> pass in any stream of GSEB, CBSC or equivalent.
+                    <br>Total Intake
+                    <br> 60
+                    <br>Program Outcomes (PO) for BCA
+                    <br>PO1:Knowledge: Apply the fundamental knowledge of information technology along with
+                    analytical,
+                    problem-solving and designing. Also to provide communication skill for life-long learning in
+                    chosen
+                    field.
+                    <br>PO2: Complex Computing Problems: Ability to develop and conduct experiments, interpret data
+                    and
+                    provide
+                    well informed conclusions.
+                    <br>PO3: Core Competence: Ability and competence to work as an IT professional upon graduation.
+                </p>
+                
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 wow bounceIn" data-wow-duration="4s">
+                <hr>
+                <h2>M.C.A</h2>
+                <hr>
+                <p>The Master of Computer Applications (MCA) at Silver Oak University is a 2-year duration
+                    professional
+                    post-graduate programme for candidates wanting to delve deeper into the world of computer
+                    application
+                    development with the help of learning modern programming language. The eligibility criteria for
+                    this
+                    course is
+                    a bachelor's degree in computer application (BCA) or in any related field. The programme is a
+                    blend
+                    of both
+                    theoretical and practical knowledge. An MCA degree endows students' an opportunity to work with
+                    tools meant to
+                    develop better and faster applications</p>
+                <p>There is no dearth of lucrative job opportunities for MCA graduates. A candidate with a master's
+                    degree in
+                    computer applications along with the right amount of relevant work experience, skill set and
+                    calibre
+                    can
+                    easily find great job opportunities at leading IT firms (both private and government) across
+                    India
+                    and abroad.
+                    It is a better choice for candidates having an MCA degree to grow their career in the IT sector.
+                    Candidates
+                    may get great employment options with top IT companies and MNCs. The MCA graduates salary and
+                    job
+                    opportunities are high when compared with other areas of study.</p>
+                <p>Some of the top job profiles for MCA graduates are: App Developer, Business Analyst, Database
+                    Engineer,
+                    Ethical Hacker, Hardware Engineer, Manual Tester, Technical Writers, Trouble-shooters, Social
+                    Media
+                    Handler,
+                    Web Designer/Developer and the like.</p>
+                
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4  wow slideInRight" data-wow-duration="4s">
+                <hr>
+                <h2>D.C.A</h2>
+                <hr>
+                <p>The DCA (Diploma in Computer Application) is is a 3 year course program in computer application
+                    and
+                    students
+                    try to pursue courses that are in high demand in the market. There are several career and job
+                    opportunities
+                    through this diploma course.
+                    <BR>Eligibility Criteria
+                    <br> pass in any stream of GSEB, CBSC or equivalent.
+                </p>
+                <p>Various skills are inculcated in the computer programmer through DCA and enhance their thinking
+                    ability are:
+                    <BR>Students will get exposure to the IT sector through a computer application.
+                    <br> duration of the diploma course is of 3 years, fulfilling all the needs of a knowledgeable
+                    programmer.
+                    <bR>Concepts are being cleared in depth by the faculty of a particular institution.
+                </p>
+            
+            </div>
+           
+        </div>
+    </div>
+    <div id="imagediv">
+        <div class="container" id="1">
+            <div class="row  wow zoomInUp" id="imgROw" data-wow-duration="3s">
+                <div class="col-xs-12 col-sm-6 col-md-5 col-lg-4" id="q1">
+                    <img src=" silveroakuni-16052022-0001.jpg" alt="image1" class="images">
+                    <span class="img1"></span>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-5 col-lg-4  " id="q1">
+                    <img src=" silveroakuni-16052022-0002.jpg" alt="image2" class="images">
+                    <span class="img1"></span>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-5 col-lg-4 " id="q1">
+                    <img src=" silveroakuni-16052022-0003.jpg" alt="image1" class="images">
+                    <span class="img1"></span>
+
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-5 col-lg-4  " id="q2">
+                    <img src=" silveroakuni-16052022-0004.jpg" alt="image2" class="images">
+                    <span class="img1"></span>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-5 col-lg-4  " id="q2">
+                    <img src=" silveroakuni-16052022-0005.jpg" alt="image2" class="images">
+                    <span class="img1"></span>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-5 col-lg-4  " id="q2">
+                    <img src=" silveroakuni-16052022-0006.jpg" alt="image2" class="images">
+                    <span class="img1"></span>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-5 col-lg-4  " id="q3">
+                    <img src=" silveroakuni-16052022-0007.jpg" alt="image2" class="images">
+                    <span class="img1"></span>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-5 col-lg-4  " id="q3">
+                    <img src=" silveroakuni-16052022-0008.jpg" alt="image2" class="images">
+                    <span class="img1"></span>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-5 col-lg-4 " id="q3">
+                    <img src=" silveroakuni-16052022-0009.jpg" alt="image1" class="images">
+                    <span class="img1"></span>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid  data-wow-duration=" 7s" style="height: 100%;background-color:rgba(178, 173, 228,0.6) ;"
+        id="formdiv">
+        <div class=" row wow jackInTheBox">
+            <div class="col-xs-12 col-sm-offset-3 col-sm-6 col-md-offset-4 col-md-4 col-lg-offset-4 col-lg-4 WOW slideInDown"
+                id="CNAForm">
+                <h3 class="text-center"><i class="fa fa-users"></i> Create New Account
+                </h3>
+                <hr>
+                <div class="form-group">
+                    <b>Firstname:</b>
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                        <input id="TxtFirstname" type="text" maxlength="20" placeholder="Enter firstname here.."
+                            class="form-control" />
+                    </div>
+                    <small id="TxtFirstnameValidate" class="text-danger"></small>
+                </div>
+                <div class="form-group">
+                    <b>Lastname:</b>
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                        <input id="TxtLastname" type="text" maxlength="20" placeholder="Enter lastname here.."
+                            class="form-control" />
+                    </div>
+                    <small id="TxtLastnameValidate" class="text-danger"></small>
+                </div>
+                <div class="form-group">
+                    <b><i class="fa fa-phone"></i> Contact No:</b>
+                    <div class="input-group">
+                        <span class="input-group-addon">+91</span>
+                        <input id="TxtContactNo" type="text" maxlength="10" placeholder="Enter contact no. here.."
+                            class="form-control" />
+                    </div>
+                    <small id="TxtContactNoValidate" class="text-danger"></small>
+                </div>
+                <div class="form-group">
+                    <b>Gender:</b>
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-female"></i> | <i class="fa fa-male"></i></span>
+                        <select class="form-control" id="DDL_Gender">
+                            <option value="F">Female</option>
+                            <option value="M">Male</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <b>Email Id:</b>
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+                        <input id="TxtEmailId" type="text" maxlength="50" placeholder="Enter email id here.."
+                            class="form-control" />
+                    </div>
+                    <small id="TxtEmailIdValidate" class="text-danger"></small>
+                </div>
+
+                <div class="form-group">
+                    <a id="BtnCreateNewAccount" class="btn btn-primary"><i class="fa fa-user-plus"
+                            style="color:#ffffff;"></i>
+                        apply now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="slidediv">
+        <div class="container-fluid">
+            <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                <!-- Indicators -->
+                <ol class="carousel-indicators">
+                    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="4"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="5"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="6"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="7"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="8"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="9"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="10"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="11"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="12"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="13"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="14"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="15"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="16"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="17"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="18"></li>
+                    <li data-target="#carousel-example-generic" data-slide-to="19"></li>
+                </ol>
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner" role="listbox" style="height: 700px;">
+                    <div class="item active">
+                        <img src="1-(2).jpg" alt="img" class="d-block w-100">
+                        <div class="carousel-caption">
+                            <H2>1</H2>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="1-(3).jpg" alt="img" class="d-block w-100">
+                        <div class="carousel-caption">
+                            <H2>2</H2>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="1-(4).jpg" alt="img" class="d-block w-100">
+                        <div class="carousel-caption">
+                            <H2>3</H2>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="1-(5).jpg" alt="img" class="d-block w-100">
+                        <div class="carousel-caption">
+                            <H2>4</H2>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="1-(7).jpg" alt="img" class="d-block w-100">
+                        <div class="carousel-caption">
+                            <H2>5</H2>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="1-(8).jpg" alt="img" class="d-block w-100">
+                        <div class="carousel-caption">
+                            <H2>6</H2>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="1-(10).jpg" alt="img" class="d-block w-100">
+                        <div class="carousel-caption">
+                            <H2>7</H2>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="1-(11).jpg" alt="img" class="d-block w-100">
+                        <div class="carousel-caption">
+                            <H2>8</H2>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="1-(14).jpg" alt="img" class="d-block w-100">
+                        <div class="carousel-caption">
+                            <H2>9</H2>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="1-(15).jpg" alt="img" class="d-block w-100">
+                        <div class="carousel-caption">
+                            <H2>10</H2>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="1-(16).jpg" alt="img" class="d-block w-100">
+                        <div class="carousel-caption">
+                            <H2>11</H2>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="1-(17).jpg" alt="img" class="d-block w-100">
+                        <div class="carousel-caption">
+                            <H2>12</H2>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="1-(18).jpg" alt="img" class="d-block w-100">
+                        <div class="carousel-caption">
+                            <H2>13</H2>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="1-(19).jpg" alt="img" class="d-block w-100">
+                        <div class="carousel-caption">
+                            <H2>14</H2>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="1-(20).jpg" alt="img" class="d-block w-100">
+                        <div class="carousel-caption">
+                            <H2>15</H2>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="1-(1) (1).jpg" alt="img" class="d-block w-100">
+                        <div class="carousel-caption">
+                            <H2>16</H2>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="1-(16) (1).jpg" alt="img" class="d-block w-100">
+                        <div class="carousel-caption">
+                            <H2>17</H2>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="1-(18) (1).jpg" alt="img" class="d-block w-100">
+                        <div class="carousel-caption">
+                            <H2>18</H2>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <img src="1-(28).jpg" alt="img" class="d-block w-100">
+                        <div class="carousel-caption">
+                            <H2>19</H2>
+                        </div>
+                    </div>
+                </div>
+                <!-- Controls -->
+                <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div>
+
+        <div class="container-fluid" id="R4">
+            <div class="row" style="margin-left: 50px;margin-right:50px;">
+                <div class="col-xs-12  col-sm-4 col-md-4 col-lg-4" style="margin-top: 90px;">
+                    <div class="col">
+                        <i class="fa fa-map-marker fa-2x"> </i>
+                        <h4>ADDRESS</h4><br>
+                        <h3>Silver Oak University Opp.<br> Bhagwat Vidyapith,<br> S. G. Road, Gota,<br> Ahmedabad -
+                            382481
+                        </h3>
+                    </div>
+
+                    <div class="row">
+
+                        <i class=" fa fa-envelope fa-2x"></i><br>
+                        <h4>
+                            Email</h4><br>
+                        <hr><br>
+                        <h3>info@silveroakuni.ac.in</h3>
+
+                    </div>
+                    <div class="row">
+
+                        <i class=" fa fa-mobile fa-2x"></i><br>
+                        <h4>
+                            Phone</h6><br>
+                            <hr><br>
+                            <h3>+91-79660 46300<br>
+                                +91 90990 63464
+                        </h4>
+
+                    </div>
+                    <div class="row">
+
+                        <i class=" fa fa-globe fa-2x"></i><br>
+                        <h4>
+                            Website</h6><br>
+                            <hr><br>
+                            <h3>www.silveroakuni.ac.in
+                        </h4>
+
+                    </div>
+                </div>
+                <div class=" col-xs-12 col-sm-offset-2 col-sm-6 col-md-offset-3 col-md-5 col-lg-offset-3 col-lg-5"
+                    style="margin-top: 110px;">
+
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3670.1760867730495!2d72.53264171475614!3d23.090649019575068!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e83b256aa3789%3A0x72814c732ec6056e!2sSilver%20Oak%20University%20NSUI!5e0!3m2!1sen!2sin!4v1653536016920!5m2!1sen!2sin"
+                        width="400" height="300" style="border:solid 3px;" referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <br>
+        <hr>
+        <h1>Thank you for visiting</h1>
+        <br>
+        <hr>
+    </div>
+
+</body>
+
+</html>
